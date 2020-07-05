@@ -13,6 +13,9 @@ public class HelloWorldController {
     @Value("${dummyValue}")
     private String dummyValue;
 
+    @Value("${anotherValue}")
+    private String anotherValue;
+
     @GetMapping(value = "/api/v1/hello")
     public Map<String, String> sayHello() {
         Map<String, String> hello = new HashMap<>();
@@ -24,7 +27,8 @@ public class HelloWorldController {
     @GetMapping(value = "api/v1/configvalue")
     public Map<String, String> getConfigValue() {
         Map<String, String> config = new HashMap<>();
-        config.put("value", dummyValue);
+        config.put("dymmyValue", dummyValue);
+        config.put("anotherValue", anotherValue);
         return config;
     }
 }
